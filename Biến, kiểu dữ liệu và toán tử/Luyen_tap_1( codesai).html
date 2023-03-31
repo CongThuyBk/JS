@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <!--Viết chương trình nhập điểm của một sinh viên cho các môn: Vật lý, Hóa học,
+và Sinh học. Sau đó hiển thị điểm trung bình và tổng của những điểm này  -->
+<script language="javascript">
+    //  Sử dụng hàm prompt để lấy dữ liệu nhập vào từ người dùng
+   let diem_Vat_ly = prompt("Điểm vật Lý");
+   let diem_Hoa = prompt("Điểm Hóa học");
+   let diem_Sinh = prompt("Điểm Sinh học");
+    // let diem_Vat_ly = parseInt(diem_Vat_ly);
+    // let diem_Hoa = parseInt(diem_Hoa);
+    // let diem_Sinh = parseInt(diem_Sinh);
+let tong_diem = diem_Vat_ly + diem_Hoa + diem_Sinh;
+// tại sao ko tính dc tổng điểm
+document.write("Tổng điểm: " + tong_diem);
+let diem_trung_binh = (diem_Vat_ly + diem_Hoa + diem_Sinh )/3;
+document.write("Điểm trung bình: " + diem_trung_binh); 
+</script>
+</body>
+</html>

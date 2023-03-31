@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+
+<body>
+    <script>
+        var arrayInt = [];
+        //  a. Nhập 5 giá trị số nguyên cho mảng từ bàn phím
+        for (let i = 0; i < 5; i++) {
+            arrayInt[i] = parseInt(prompt("Nhập giá trị số nguyên thứ " + (i + 1) + ": "));
+        }
+        //b. Hiển thị giá trị các phần tử của mảng
+        console.log("Các phần tử trong mảng là: " + arrayInt);
+        //c. In các phần tử có giá trị chẵn và tính tổng
+        let tong_Chan = 0;
+        for (let i = 0; i < arrayInt.length; i++) {
+            if (arrayInt[i] % 2 == 0) {
+                console.log("Phần tử có giá trị chẵn: " + arrayInt[i]);
+                tong_Chan += arrayInt[i];
+            }
+        }
+        console.log("Tổng các phần tử có giá trị chẵn là: " + tong_Chan);
+        //d. In các phần tử có chỉ số lẻ và tính tổng
+        let tong_Le = 0;
+        for (let i = 1; i < arrayInt.length; i += 2) {
+            console.log("Phần tử có chỉ số lẻ: " + arrayInt[i]);
+            tong_Le += arrayInt[i];
+        }
+        console.log("Tổng các phần tử có chỉ số lẻ là: " + tong_Le);
+        //e. In giá trị các phần tử trong mảng là số nguyên tố
+        let soNguyenTo = [];
+        for (let i = 0; i < arrayInt.length; i++) {
+            let check = true;
+            for (let j = 2; j < arrayInt[i]; j++) {
+                if (arrayInt[i] % j == 0) {
+                    check = false;
+                    break;
+                }
+            }
+            if (check) {
+                soNguyenTo.push(arrayInt[i]);
+            }
+        }
+        console.log("Các số nguyên tố trong mảng: " + soNguyenTo.join(", "));
+
+        //f. Tìm và in các phần tử có giá trị là max hoặc min
+        let max = arrayInt[0];
+        let min = arrayInt[0];
+        for (let i = 1; i < arrayInt.length; i++) {
+            if (arrayInt[i] > max) {
+                max = arrayInt[i];
+            }
+            if (arrayInt[i] < min) {
+                min = arrayInt[i];
+            }
+        }
+        console.log("Max = " + max);
+        console.log("Min = " + min);
+         //g. Sắp xếp mảng giảm dần và in giá trị các phần tử mảng sau khi sắp xếp (không và có sử dụng hàm sort)
+    for (let i = 0; i < arrayInt.length - 1; i++) {
+        for (let j = i + 1; j < arrayInt.length; j++) {
+            if (arrayInt[i] < arrayInt[j]) {
+            let ham_SoSanh = arrayInt[i];
+            arrayInt[i] = arrayInt[j];
+            arrayInt[j] = ham_SoSanh;
+            }
+        }
+    }
+    console.log(`Các phần tử của mảng sau khi sắp xếp giảm dần là: {arrayInt.join(", ")}`);
+     //h. Nhập vào một số nguyên và thống kê có bao nhiêu phần tử có giá trị như vậy
+     let number = parseInt(prompt("Nhập số nguyên cần thống kê:"));
+    let count = 0;
+    for (let i = 0; i < arrayInt.length; i++) {
+    if (arrayInt[i] === number) {
+        count++;
+    }
+    }
+    console.log(`Có ${count} phần tử trong mảng có giá trị bằng ${number}`);
+    </script>
+    </script>
+</body>
+
+</html>
